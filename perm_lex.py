@@ -9,18 +9,14 @@ def perm_gen_lex(a):
         return list1
     
     n = len(a)
-    for i in range(n):
-        r = perm_gen_lex(a[0:-2]) + a[i]
-        b = a[i] + perm_gen_lex(a[0:-2])
-        list1[i] = r
-        list1[-i] = b
-    return list2
+    last = a[-1]
+    for i in range(n-1):
+        y = perm_gen_lex(a[0:-1])
+        print(y)
+        r = y[i] + last
+        b = last + y[i]
+        print(r)
+        print(b)
+    return [r, b]
 
-
-    #n.replace(b,c)
-
-    #if len(list1) <= len(a))!:
-     #   list1.append(n)
-    #else:
-     #   return list1
 print(perm_gen_lex('ab'))

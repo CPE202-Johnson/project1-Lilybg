@@ -2,12 +2,14 @@
 def convert(num, b):
     """Recursive function that returns a string 
     representing num in the base b"""
-    if num < b:
-        return num
+    if int(num/b) == 0:
+        return str(num%b)
 
-    reduced = num/b
-    dig = str(num%b)
+    reduced = num//b
+    y = convert(reduced,b)
+    
+    return y + str(num%b)
 
-    return dig + convert(reduced,b)
+    
 
-print(convert(20,2))
+print(convert(30,4))

@@ -2,21 +2,21 @@
 #str(lowercase letters in alphabetical order) => list of strings 
 def perm_gen_lex(a): 
     if len(a) == 0:   
-        list1 = []
-        return list1
+        return []
     elif len(a) == 1:
-        list1 = [a]
-        return list1
+        return [a]
     
-    n = len(a)
-    last = a[-1]
+    n = len(a)  #3
+    last = a[-1] 
+
+    
     for i in range(n-1):
         y = perm_gen_lex(a[0:-1])
-        print(y)
+        #print(y)
         r = y[i] + last
         b = last + y[i]
-        print(r)
-        print(b)
-    return [r, b]
-
-print(perm_gen_lex('ab'))
+        y.append(r)
+        y.append(b)
+    
+    return y[1:]
+print(perm_gen_lex('abc'))

@@ -20,4 +20,3 @@ def perm_gen_lex(a):
     return hold
     
 
-print(perm_gen_lex('abc'))

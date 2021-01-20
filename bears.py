@@ -3,7 +3,6 @@
 
 def bears(n):
     #base case
-    print(n)
     if n == 42:
         return True
     if n<42:

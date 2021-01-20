@@ -13,9 +13,13 @@ def bears(n):
         if n//2 > 42:
             t = 1
             q = 1
+            r = 0
+            s = 0
         else:
             t = 0
             q = 0
+            r = 0
+            s = 0
     else:
         t = 0
         q = 0
@@ -35,6 +39,10 @@ def bears(n):
     if n/5 == n//5:
         t = t + 1
         s = 1
+
+    if r == q == s == 0:
+        return False
+
     while t != 0:
         if (n/3 == n//3 or n/4 == n//4) and r == 1:
             r = 0
@@ -54,8 +62,6 @@ def bears(n):
             if n == 42:
                 return n
             bears(n//2)
-        t = t - 1
-        
-       
+        t = t - 1   
     return n
-print(bears(250))
+print(bears(53))

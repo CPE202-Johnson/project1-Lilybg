@@ -11,10 +11,15 @@ class TestBaseConvert(unittest.TestCase):
 
     def test_base16(self):
         self.assertEqual(convert(316,16),"13C")
+    def test_base16_1(self):   
         self.assertEqual(convert(42,16),"2A")
+    def test_base16_2(self):
         self.assertEqual(convert(43,16),"2B")
+    def test_base16_3(self):
         self.assertEqual(convert(45,16),"2D")
+    def test_base16_4(self):
         self.assertEqual(convert(46,16),"2E")
+    def test_base16_5(self):
         self.assertEqual(convert(47,16),"2F")
 
 if __name__ == "__main__":

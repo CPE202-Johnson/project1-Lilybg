@@ -1,7 +1,7 @@
 #int => str
-#
+#can change the base of any given integer
 def convert(num, b):
-    if int(num/b) == 0:
+    if num//b == 0:
         if b < 10:
             return str(num%b)
         else:
@@ -17,7 +17,7 @@ def convert(num, b):
                 return 'E'
             elif num%b == 15:
                 return 'F'
-            else: 
+            else:
                 return str(num%b)
 
 
@@ -47,6 +47,3 @@ def convert(num, b):
         else:
             return y + str(num%b)
 
-    
-
-print(convert(8001,12))

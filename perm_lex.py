@@ -6,17 +6,18 @@ def perm_gen_lex(a):
     elif len(a) == 1:
         return [a]
     
-    n = len(a)  #3
-    last = a[-1] 
+    n = len(a)
+    hold = a[0]  
+    
+    y = perm_gen_lex(a[1:])
 
+    r = y[0] + hold
+    print(r)
+    y[0] = hold + y[0]
+    y.append(r)
     
-    for i in range(n-1):
-        y = perm_gen_lex(a[0:-1])
-        #print(y)
-        r = y[i] + last
-        b = last + y[i]
-        y.append(r)
-        y.append(b)
     
-    return y[1:]
+  
+    return y
+
 print(perm_gen_lex('abc'))

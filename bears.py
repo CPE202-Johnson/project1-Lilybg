@@ -49,19 +49,12 @@ def bears(n):
             lval = n%10
             lval_2 = (n%100 - n%10)/10
             lval_3 = int(lval * lval_2)
-            if n == 42:
-                return n
             bears(int(n - lval_3)) 
         if n/5 == n//5 and s == 1:
             s = 0
-            if n == 42:
-                return n
             bears(n-42)
         if n/2 == n//2 and q == 1:
             q = 0
-            if n == 42:
-                return n
             bears(n//2)
         t = t - 1   
     return n
-print(bears(53))

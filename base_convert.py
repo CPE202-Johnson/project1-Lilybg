@@ -1,7 +1,7 @@
 #int => str
 #can change the base of any given integer
 def convert(num, b):
-    if num//b == 0:
+    if num//b == 0: #add floor division
         if b < 10:
             return str(num%b)
         else:

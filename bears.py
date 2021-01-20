@@ -3,31 +3,59 @@
 
 def bears(n):
     #base cases
-    
-    if n/2 == n//2:
-        t = 1
-    else:
-        t = 0
-    if n/3 == n//3 or n/4 == n//4:
-        t = t + 1
-    if n/5 == n//5:
-        t = t + 1
-    
-    
+    print(n)
     if n == 42:
         return True
-    #elif n < 42 and t == 0:
-     #   return False
+    if n<42:
+        return False
 
-    for i in range(0,t):
-        print(t)
-        if n/2 == n//2:
-            return bears(n/2)
-        if n/3 == n//3 or n/4 == n//4:
+    if n/2 == n//2:
+        if n//2 > 42:
+            t = 1
+            q = 1
+        else:
+            t = 0
+            q = 0
+    else:
+        t = 0
+        q = 0
+        r = 0
+        s = 0
+    if n/3 == n//3 or n/4 == n//4:
+        lval = n%10
+        lval_2 = (n%100 - n%10)//10
+        lval_3 = lval * lval_2
+        if lval_3 != 0:
+            r = 1
+            t = t + 1
+        else:
+            r=0
+    else:
+        r=0
+    if n/5 == n//5:
+        t = t + 1
+        s = 1
+    while t != 0:
+        if (n/3 == n//3 or n/4 == n//4) and r == 1:
+            r = 0
             lval = n%10
             lval_2 = (n%100 - n%10)/10
-            return bears(lval * lval_2)
-        if n/5 == n//5:
-            return bears(n-42)
-
-print(bears(520))
+            lval_3 = int(lval * lval_2)
+            if n == 42:
+                return n
+            bears(int(n - lval_3)) 
+        if n/5 == n//5 and s == 1:
+            s = 0
+            if n == 42:
+                return n
+            bears(n-42)
+        if n/2 == n//2 and q == 1:
+            q = 0
+            if n == 42:
+                return n
+            bears(n//2)
+        t = t - 1
+        
+       
+    return n
+print(bears(250))

@@ -21,6 +21,8 @@ class TestBaseConvert(unittest.TestCase):
         self.assertEqual(convert(46,16),"2E")
     def test_base16_5(self):
         self.assertEqual(convert(47,16),"2F")
+    def test_base16_6(self):
+        self.assertEqual(convert(10,16),"A")
 
 if __name__ == "__main__":
         unittest.main()

@@ -2,7 +2,7 @@
 #imput a certain amount of bears that will go through the algorithm and output 42 bears
 
 def bears(n):
-    #base cases
+    #base case
     print(n)
     if n == 42:
         return True

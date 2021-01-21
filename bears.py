@@ -11,7 +11,7 @@ def bears(n):
     if n/2 == n//2:
         if n//2 > 42:
             t = q = 1   #allows it to run the divide by 2 case only once
-            r = 3 = 0
+            r = s = 0
         else:
             t = q = r = s = 0
     else:
